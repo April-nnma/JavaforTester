@@ -1,31 +1,20 @@
+import java.util.Arrays;
+
 public class BT2 {
     public static void main (String [] args) {
-        int[] array1 = {1, 2, 3, 4, 5, 6};
-        int[] array2 = {0, 5, 10};
-        int[] array3 = {15};
-
-        System.out.println("Input: [1, 2, 3, 4, 5, 6] -> Output: " + findSecondLargest(array1));
-        System.out.println("Input: [0, 5, 10] -> Output: " + findSecondLargest(array2));
-        System.out.println("Input: [15] -> Output: " + findSecondLargest(array3));
+        System.out.println("Output: " + findSecondLargest(new int[] {2, 4, 6, 8, 10, 12}));
+        System.out.println("Output: " + findSecondLargest(new int[] {0, 5, 10}));
+        System.out.println("Output: " + findSecondLargest(new int[] {19}));
     }
 
-    public static int findSecondLargest(int [] arr){
-        if (arr.length < 2) {
+    public static int findSecondLargest(int[] arr) {
+        int[] sortArr = Arrays.stream(arr)
+                .distinct()
+                .sorted()
+                .toArray();
+        if (sortArr.length < 2) {
             return Integer.MIN_VALUE;
         }
-
-        int largest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
-
-        for (int num : arr) {
-            if (num > largest) {
-                secondLargest = largest;
-                largest = num;
-            }
-            else if (num > secondLargest && num < largest) {
-                secondLargest = num;
-            }
-        }
-        return secondLargest;
+        return sortArr[sortArr.length - 2];
     }
 }
