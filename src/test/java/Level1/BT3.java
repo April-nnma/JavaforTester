@@ -1,3 +1,5 @@
+package Level1;
+
 public class BT3 {
     public static void main (String [] args) {
         System.out.println("Input: 10 -> Output: " + sumEven(10));
