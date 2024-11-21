@@ -1,7 +1,7 @@
 package Level1;
 
 public class BT4 {
-    public static void main (String [] args) {
+    public static void main(String[] args) {
         String input1 = "Xin chào các bạn";
         String input2 = "Hello World";
 

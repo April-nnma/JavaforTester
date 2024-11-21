@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class BT5 {
-    public static void main (String [] args) {
+    public static void main(String[] args) {
         System.out.println("Output: " + firstLetter("Ng N Minh Anh"));
         System.out.println("Output: " + firstLetter("Greenwich University"));
     }
